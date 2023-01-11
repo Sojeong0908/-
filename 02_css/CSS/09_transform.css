@@ -1,0 +1,99 @@
+.container {
+  width: 500px;
+  padding: 10px;
+
+  border: 3px solid black;
+}
+
+.container .box {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+
+  border: 3px solid red;
+  box-sizing: border-box;
+
+  text-align: center;
+  line-height: 100px;
+
+  transition: transform 1s;
+}
+
+.container.translate .box:nth-of-type(1):hover {
+  transform: translateX(50px);
+}
+
+.container.translate .box:nth-of-type(2):hover {
+  transform: translateY(-50px);
+}
+
+.container.translate .box:nth-of-type(3):hover {
+  transform: translate(20px, 20px);
+}
+
+.container.translate .box.z:hover {
+  transform: translate(20px, 30px);
+}
+
+/* rotate는 단위가 deg. 축을 기준으로 */
+/* .container.rotate .box {
+  transform-origin: top center;
+} */
+
+.container.rotate {
+  perspective: 50px; /* perspective(관점)는 3d 관점이 필요한 컨테이너 요소에 사용. 가까이서(값이 작을수록) 볼수록 변화의 폭이 커짐 */
+}
+
+.container.rotate .box:hover {
+  transform: rotatez(50deg);
+}
+
+.container.rotate .x:hover {
+  transform: rotatex(45deg);
+}
+
+.container.rotate .y:hover {
+  transform-origin: left;
+}
+
+.container.rotate .y:hover {
+  transform: rotatey(45deg);
+}
+
+/* scale은 안에 있는 콘텐츠 사이즈에도 영향을 줌. (-)값을 주면 뒤집힘.*/
+.container.scale .boxx {
+  transform-origin: left;
+}
+
+.container.scale .box.x:hover {
+  transform: scalex(90%);
+}
+
+.container.scale .box.y {
+  transform-origin: bottom;
+}
+
+.container.scale .box.y:hover {
+  transform: scaley(120%);
+}
+
+.container.scale .box.xy:hover {
+  transform: scale(120%);
+}
+
+/* skew(기울기)는 단위가 deg.*/
+.container.skew .box.x:hover {
+  transform: skewx(20deg);
+}
+
+.container.skew .box.y:hover {
+  transform: skewy(20deg);
+}
+
+.container.skew .box.xy:hover {
+  transform: skew(20deg, 40deg);
+}
+
+.container.complex .box:hover {
+  transform: translate(50px) scale(2) rotate(30deg) skew(20deg);
+}
