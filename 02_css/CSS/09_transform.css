@@ -18,6 +18,9 @@
 
   transition: transform 1s;
 }
+.container.translate {
+  perspective: 500px;
+}
 
 .container.translate .box:nth-of-type(1):hover {
   transform: translateX(50px);
@@ -32,7 +35,7 @@
 }
 
 .container.translate .box.z:hover {
-  transform: translate(20px, 30px);
+  transform: translatez(-100px);
 }
 
 /* rotate는 단위가 deg. 축을 기준으로 */
