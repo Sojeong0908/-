@@ -14,7 +14,7 @@ body {
 
   background-color: #ddd; /* 배경색을 지정한다. 키워드 혹은 색상코드를 지정한다. */
 
-  background-image: url("../images/dog_bg.jpg");
+  background-image: url("../html/assets/고양이2.jpg");
 
   background-size: auto 50px; /* 가로, 세로 순으로 지정. 하나만 지정 시 원본 비율에 맞춘다. */
   background-size: contain; /* 비율이 깨지지 않는 선에서 가장 크게 자르지 않고 표현한다. */
@@ -23,8 +23,8 @@ body {
 
   background-position: top;
   /* 
-    사진의 위치를 지정한다. x, y축 순으로. 하나만 지정하면 나머지는 center로 취급한다. 
-    숫자나 키워드로 지정할 수 있다. 숫자 사용시 x,y 순을 지켜야하고 둘다 키워드를 사용 하면 순서는 상관없다.
+    x, y축 순으로 사진의 위치를 지정한다. 하나만 지정하면 나머지는 center로 취급한다. 
+    숫자나 키워드로 지정할 수 있다. 숫자 사용시 x,y 순을 지켜야 하고 둘 다 키워드를 사용 하면 순서는 상관없다.
   */
 
   background-repeat: repeat; /* 배경이미지의 반복 여부를 지정한다. */
@@ -36,7 +36,7 @@ body {
 
   background-attachment: fixed; /* 배경의 첨부 방식 */
 
-  background: url("../images/pngegg.png") center / cover no-repeat;
+  background: url("../html/assets/고양이3.jpg") center / cover no-repeat; /* 포지션 / 크기*/
 }
 
 /* 마우스 올리면 반복되면서 크기는 가로 50px */
