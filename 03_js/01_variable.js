@@ -43,7 +43,7 @@ var name, address;
 
 var num01 = 10;
 var num02 = 20;
-var num02 = temp;
+var temp = num02;
 
 nmu01 = num02;
 num02 = temp;
@@ -67,3 +67,21 @@ console.log(num01, num02);
 // var userList = [];   카멜 케이스. 띄어쓰기 부분을 대문자로 구분한다.
 // var user_list = [];  스네이크 케이스. 띄어쓰기 부분을 _(언더바)로 구분한다.
 // var UserList =[];    카멜 케이스와 동일하지만, 대문자로 시작한다. 주로 생성자의 이름에 사용된다.
+
+/* 
+    var를 쓰면 안되는 이유 
+        1) 변수 호이스팅이 일어난다. 
+        2) 중복 선언이 가능하다. 
+        3) 함수 레벨 스코프만 지원하고 블록 레벨 스코프는 지원하지 않는다. 
+    
+*/
+console.log("-------var을 쓰면 안되는 이유--------");
+console.log(a); // 변수 호이스팅 발생. undefined 출력.
+var a = 10;
+var a = 100; // var 키워드는 중복 선언을 해도 오류가 발생하지 않는다.
+console.log(a);
+
+// let a = 0; // let 키워드는 중복 선언하면 오류가 발생.
+
+// console.log(b); // 호이스팅은 일어나나 TDZ로 인해 오류 발생. 초기에 문제 발견 가능
+let b = 10;

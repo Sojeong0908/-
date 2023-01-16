@@ -46,7 +46,7 @@ console.log(typeof isBig);
         - 배열 [인덱스]의 형태로 접근할 때 [] 안에 숫자로만 평가되는 식 사용 가능. 
 */
 
-var fruits = ["apple", "orange", "banana"];
+var fruits = ["apple", "orange", "banana", 1];
 console.log(fruits);
 console.log(fruits[0]);
 console.log(fruits[10 - 9]);
