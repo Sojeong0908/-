@@ -50,8 +50,9 @@ var num02 = 0;
 var selectedNum = 3;
 console.log("---------while문---------");
 while (true) {
+  if (selectedNum === num02);
   console.log(num02);
-  if (selectedNum === num02) break;
+  break;
   num02++; // 증감식이 없기 때문에 내부에서 증감.
 }
 
