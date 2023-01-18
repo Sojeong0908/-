@@ -17,8 +17,8 @@ li {
 
 .clearFix::after {
   content: "";
-  display: block;
-  clear: both;
+  /* display: block; */
+  /* clear: both; */
 }
 
 h1 {
