@@ -72,7 +72,7 @@
 
       //이벤트 위임을 통한 삭제 기능 구현
       todoList.addEventListener("click", function (e) {
-        // e.target(이벤트가 실제로 발생한 요소)가 삭제버튼이 맞는지 확인.
+        // e.target(이벤트가 실제로 발생한 요소)가 삭제버튼이 c 확인.
         if (e.target.matches(".todoContainer ul li button")) {
           // 삭제버튼의 부모노드(parentNode)인 li태그를 삭제
           todoArr = todoArr.filter((todo) => {
