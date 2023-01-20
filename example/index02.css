@@ -92,6 +92,8 @@ main .imgList {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  background: center / auto 100% no-repeat;
 }
 
 .imgList li a img {
