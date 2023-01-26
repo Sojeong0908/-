@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Counter() {
   //useState(초기값) : 배열의 첫번째는 상태값, 두번째는 업데이트 함수 반환.
+  //        => 클로저 개념 사용.
   const [count, setCount] = useState(0);
 
   // 상태값이 업데이트되면 재렌더링이 일어난다.
