@@ -1,10 +1,37 @@
+import { useRef, useState } from "react";
 import styled from "styled-components";
 
-function Todoinput() {
+function TodoInput({ dispatch }) {
+  const [text, setText] = useState("");
+  const nextId = useRef(4);
+  const inputRef = useRef();
+
+  const handleText = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text === "") {
+      alert("할 일을 입력해주세요.");
+      return;
+    }
+    dispatch({ type: "CREATE_TODO", id: nextId.current++, text });
+    setText("");
+    inputRef.current.focus();
+  };
+
   return (
     <Container>
-      <Input placeholder="할 일을 입력해주세요." />
-      <Button>등록</Button>
+      <form onSubmit={handleSubmit}>
+        <Input
+          placeholder="할일을 입력해주세요."
+          onChange={handleText}
+          value={text}
+          ref={inputRef}
+        />
+        <Button>등록</Button>
+      </form>
     </Container>
   );
 }
@@ -13,6 +40,7 @@ const Container = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.bd_color};
   padding: 10px;
 `;
+
 const Input = styled.input`
   width: 100%;
   outline: none;
@@ -22,6 +50,7 @@ const Input = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.bd_color};
   font-size: 0.8rem;
 `;
+
 const Button = styled.button`
   width: 100%;
   padding: 5px 0;
@@ -42,4 +71,5 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.active_color};
   }
 `;
-export default Todoinput;
+
+export default TodoInput;
