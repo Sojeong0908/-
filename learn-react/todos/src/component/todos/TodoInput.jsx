@@ -1,10 +1,13 @@
 import { useRef, useState } from "react";
 import styled from "styled-components";
+import { useTodoDispatch } from "../../context/todos";
 
-function TodoInput({ dispatch }) {
+function TodoInput() {
   const [text, setText] = useState("");
   const nextId = useRef(4);
   const inputRef = useRef();
+
+  const dispatch = useTodoDispatch;
 
   const handleText = (e) => {
     setText(e.target.value);
@@ -13,7 +16,7 @@ function TodoInput({ dispatch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
-      alert("할 일을 입력해주세요.");
+      alert("할일을 입력해주세요.");
       return;
     }
     dispatch({ type: "CREATE_TODO", id: nextId.current++, text });

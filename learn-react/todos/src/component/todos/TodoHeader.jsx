@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { NumContext, useTodoState } from "../../context/todos";
 
-function TodoHeader({ todos }) {
+function TodoHeader() {
+  const todos = useTodoState;
   // 실행되는 로컬 시간을 한글로 표기.
   const dateStr = new Date().toLocaleDateString("ko-KR", {
     dateStyle: "full",
@@ -9,6 +12,11 @@ function TodoHeader({ todos }) {
   const doneCount = todos.filter((todo) => todo.done).length;
 
   const percentage = (doneCount / todos.length) * 100;
+
+  // useContext(컨텐스트) :  컨텍스트가 value 속성으로 제공하는 값을 반환한다.
+  const num = useContext(NumContext);
+
+  console.log("num context : ", num);
 
   return (
     <Container>
@@ -52,4 +60,5 @@ const PercentageBar = styled.div`
     background-color: ${({ theme }) => theme.colors.main_color};
   }
 `;
+
 export default TodoHeader;
